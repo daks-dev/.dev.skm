@@ -1,0 +1,86 @@
+@import '@daks.dev/svelte.sdk/fonts/open-sans/variable';
+@import '@daks.dev/svelte.sdk/tailwind';
+
+/*
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url('/assets/fonts/open-sans/open-sans-cyrillic-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url('/assets/fonts/open-sans/open-sans-latin-variable-wghtOnly-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+*/
+
+@layer base {
+  :root {
+    --navbar-height: 47px;
+  }
+
+  body {
+    @apply -lg:snap-start relative
+           bg-neutral-100 font-normal
+           text-gray-800 dark:bg-gray-800
+           dark:text-neutral-100;
+  }
+
+  h1 {
+    @apply text-3.5xl
+           md:text-4.5xl tracking-wide text-gray-500 dark:text-gray-300
+           sm:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply sm:text-3.5xl
+           lg:text-4.5xl text-3xl tracking-wide text-slate-700
+           dark:text-slate-500 md:text-4xl;
+  }
+
+  h3 {
+    @apply sm:text-2.5xl md:text-3.5xl text-2xl text-slate-800
+           dark:text-slate-400 lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+}
+
+@layer utilities {
+  .min-h-screen--navbar {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+  .max-h-screen--navbar {
+    max-height: calc(100vh - var(--navbar-height));
+  }
+
+  .snap-start,
+  .snap-center {
+    scroll-margin-top: var(--navbar-height);
+  }
+
+  .title {
+    @apply after:content-null after:mt-4 after:block
+           after:h-[5px] after:w-[25vw] after:bg-cyan-600 after:dark:bg-cyan-700 sm:after:w-[20vw]
+           lg:after:w-[15vw] 2xl:after:w-[10vw];
+  }
+}
+
+main,
+[role='main'] {
+  @apply mb-8 flex flex-col;
+  padding-top: var(--navbar-height);
+}
+main > header,
+[role='main'] > header {
+  @apply mb-8 pt-4 sm:pt-5
+         md:pt-8 lg:mb-12;
+}
