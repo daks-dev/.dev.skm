@@ -17,7 +17,7 @@
   </header>
 
   <GalleryKit
-    class="content lg:grid-cols-2 gap-x-8 gap-y-12"
+    class="content gap-x-8 gap-y-12 lg:grid-cols-2"
     custom={{
       caption: 'text-lg text-slate-600 dark:text-slate-400'
     }}

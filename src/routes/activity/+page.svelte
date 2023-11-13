@@ -26,7 +26,7 @@
   {description} />
 
 <main
-  class="justify-between min-h-screen mb-0"
+  class="mb-0 min-h-screen justify-between"
   itemprop="mainContentOfPage">
   <header class="content mb-0">
     <h1 class="title">Направления деятельности</h1>

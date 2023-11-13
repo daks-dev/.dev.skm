@@ -22,8 +22,8 @@
       <CardPlaceholder
         class="
           w-full max-w-sm
-          odd:bg-green-700/20 even:bg-red-700/20
-          snap-start" />
+          snap-start odd:bg-green-700/20
+          even:bg-red-700/20" />
     {/each}
   </div>
   <TestimonialPlaceholder class="content max-w-xl" />

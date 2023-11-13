@@ -26,27 +26,27 @@
   }
 
   body {
-    @apply -lg:snap-start relative
-           bg-neutral-100 font-normal
-           text-gray-800 dark:bg-gray-800
-           dark:text-neutral-100;
+    @apply relative bg-neutral-100
+           font-normal text-gray-800
+           dark:bg-gray-800 dark:text-neutral-100
+           -lg:snap-start;
   }
 
   h1 {
     @apply text-3.5xl
-           md:text-4.5xl tracking-wide text-gray-500 dark:text-gray-300
-           sm:text-4xl lg:text-5xl;
+           tracking-wide text-gray-500 dark:text-gray-300 sm:text-4xl
+           md:text-4.5xl lg:text-5xl;
   }
 
   h2 {
-    @apply sm:text-3.5xl
-           lg:text-4.5xl text-3xl tracking-wide text-slate-700
-           dark:text-slate-500 md:text-4xl;
+    @apply text-3xl
+           tracking-wide text-slate-700 dark:text-slate-500 sm:text-3.5xl
+           md:text-4xl lg:text-4.5xl;
   }
 
   h3 {
-    @apply sm:text-2.5xl md:text-3.5xl text-2xl text-slate-800
-           dark:text-slate-400 lg:text-4xl;
+    @apply text-2xl text-slate-800 dark:text-slate-400 sm:text-2.5xl
+           md:text-3.5xl lg:text-4xl;
   }
 
   h4 {
@@ -68,8 +68,8 @@
   }
 
   .title {
-    @apply after:content-null after:mt-4 after:block
-           after:h-[5px] after:w-[25vw] after:bg-cyan-600 after:dark:bg-cyan-700 sm:after:w-[20vw]
+    @apply after:mt-4 after:block after:h-[5px]
+           after:w-[25vw] after:bg-cyan-600 after:content-null after:dark:bg-cyan-700 sm:after:w-[20vw]
            lg:after:w-[15vw] 2xl:after:w-[10vw];
   }
 }

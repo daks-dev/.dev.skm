@@ -24,8 +24,8 @@
   </header>
 
   <div
-    class="content my-auto py-8
-              flex flex-wrap lg:flex-nowrap gap-8">
+    class="content my-auto flex
+              flex-wrap gap-8 py-8 lg:flex-nowrap">
     <div class="flex-auto text-lg">
       <h2 class="mb-7">Строительная компания «МАСШТАБ»</h2>
       <p>
@@ -45,8 +45,8 @@
 
     <img
       class="
-        flex-initial mx-auto
-        bg-no-repeat bg-center bg-1/5 bg-loading"
+        bg-1/5 mx-auto
+        flex-initial bg-loading bg-center bg-no-repeat"
       src={image.thumbnail.src}
       width={image.thumbnail.width}
       height={image.thumbnail.height}

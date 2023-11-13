@@ -35,13 +35,13 @@
   {description} />
 
 <main
-  class="justify-between grow"
+  class="grow justify-between"
   itemprop="mainContentOfPage">
   <div
     class="
-      wrapper pt-8 xl:pt-12
-      flex flex-wrap items-center">
-    <header class="flex flex-col w-fit mb-12">
+      wrapper flex flex-wrap
+      items-center pt-8 xl:pt-12">
+    <header class="mb-12 flex w-fit flex-col">
       <Lightbox
         custom={{ overlay: 'overflow-offset' }}
         title="Масштаб &trade;"
@@ -49,9 +49,9 @@
         <svelte:fragment slot="thumbnail">
           <img
             class="
-              sm:inline-block
-              pb-4 mx-auto sm:mx-0
-              drop-shadow-2xl hover:sepia"
+              mx-auto
+              pb-4 drop-shadow-2xl hover:sepia
+              sm:mx-0 sm:inline-block"
             src={logo.thumbnail.src}
             width={logo.thumbnail.width}
             height={logo.thumbnail.height}
@@ -64,16 +64,16 @@
             itemprop="primaryImageOfPage" />
           <h1
             class="
-              sm:inline-block
-              font-semibold
-              text-shadow text-center sm:text-left text-gray-600 dark:text-gray-300"
+              text-shadow
+              text-center
+              font-semibold text-gray-600 dark:text-gray-300 sm:inline-block sm:text-left"
             style:--text-shadow-color="#555555"
             style:--text-shadow-val="7px">
             <span
               class="
                 block
-                font-extrabold
-                text-3.5xl md:text-4xl lg:text-4.5xl xl:text-5xl uppercase">
+                text-3.5xl
+                font-extrabold uppercase md:text-4xl lg:text-4.5xl xl:text-5xl">
               Масштаб &trade;
             </span>
             <span
@@ -84,7 +84,7 @@
         </svelte:fragment>
         <img
           class="
-            bg-no-repeat bg-center bg-1/10 bg-loading
+            bg-1/10 bg-loading bg-center bg-no-repeat
             hover:sepia"
           src={logo.image.src}
           width={logo.image.width}
@@ -95,43 +95,43 @@
       <!-- text-cyan-600 dark:text-cyan-700 -->
       <h2
         class="
-          pt-4 xl:pt-8 2xl:pt-12
-          text-center lg:text-left
-          font-normal
-          text-3xl xs:text-4xl md:text-5xl lg:text-4.5xl xl:text-5xl 2xl:text-6xl
-          text-cyan-700 dark:text-cyan-600">
+          pt-4 text-center text-3xl
+          font-normal text-cyan-700
+          dark:text-cyan-600
+          xs:text-4xl md:text-5xl lg:text-left lg:text-4.5xl xl:pt-8 xl:text-5xl
+          2xl:pt-12 2xl:text-6xl">
         Строим будущее <span class="whitespace-nowrap">по-новому</span>
       </h2>
     </header>
 
     <div
       class="
-        xs:hidden
-        w-full flex flex-row justify-around items-center mb-12">
+        mb-12
+        flex w-full flex-row items-center justify-around xs:hidden">
       <a
         class={button}
         href="tel://{telephone.replace(/[\s-()]/g, '')}">
         <Icon
           icon="ic:round-phone-in-talk"
-          class="w-16 h-16" />
+          class="h-16 w-16" />
       </a>
       <a
         class={button}
         href="mailto:{email}">
         <Icon
           icon="ic:round-mail-outline"
-          class="w-16 h-16" />
+          class="h-16 w-16" />
       </a>
     </div>
     <div
       class="
-        hidden xs:block
-        w-full lg:max-w-xs xl:max-w-sm mx-auto px-2 mb-12 lg:-mt-12 lg:mb-0 lg:mr-0">
+        mx-auto mb-12
+        hidden w-full px-2 xs:block lg:-mt-12 lg:mb-0 lg:mr-0 lg:max-w-xs xl:max-w-sm">
       <Async
         let:value
         {getter}>
         <CarouselKit
-          class="overflow-hidden rounded-md lg:rounded-lg drop-shadow-lg"
+          class="overflow-hidden rounded-md drop-shadow-lg lg:rounded-lg"
           {...value}
           {show}
           duration={15000}
@@ -150,8 +150,8 @@
   <div
     class="
       wrapper
-      font-thin text-xs lg:text-sm text-justify lg:text-center
-      text-gray-600 dark:text-gray-400">
+      text-justify text-xs font-thin text-gray-600 dark:text-gray-400
+      lg:text-center lg:text-sm">
     Любая информация, представленная на данном сайте, носит исключительно информационный характер и
     ни при каких условиях не является публичной офертой, определяемой положениями
     статьи&nbsp;437&nbsp;ГК&nbsp;РФ.

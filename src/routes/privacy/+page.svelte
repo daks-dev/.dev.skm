@@ -23,7 +23,7 @@
   </header>
 
   <div
-    class="content readable
+    class="readable content
            text-slate-700 dark:text-slate-300">
     <div>
       Настоящая Политика конфиденциальности персональных данных (далее &mdash; Политика
@@ -367,8 +367,8 @@
     padding-left: 2rem;
   }
   .list h2 {
-    @apply pt-5 pb-3 text-left text-2xl sm:text-3xl leading-tight
-           before:text-xl sm:before:text-2xl;
+    @apply pb-3 pt-5 text-left text-2xl leading-tight before:text-xl
+           sm:text-3xl sm:before:text-2xl;
   }
   .list h2:before,
   .list div:not(.list, .contents):before {

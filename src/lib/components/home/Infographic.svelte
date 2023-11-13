@@ -39,8 +39,8 @@
       <img
         bind:this={info.node}
         class="
-          p-7 rounded-lg
-          bg-slate-600 dark:bg-transparent"
+          rounded-lg bg-slate-600
+          p-7 dark:bg-transparent"
         style:opacity=".25"
         src={info.icon?.src}
         width={info.icon?.width}
@@ -51,14 +51,14 @@
       <figcaption class="flex flex-col items-center gap-2">
         <span
           class="
-            font-bold text-4xl
+            text-4xl font-bold
             text-gray-500 dark:text-slate-300">
           {@html info.count || '&mdash;'}
         </span>
         <span
           class="
-            text-lg md:text-xl
-            text-slate-600 dark:text-slate-300">
+            text-lg text-slate-600
+            dark:text-slate-300 md:text-xl">
           {info.title}
         </span>
       </figcaption>

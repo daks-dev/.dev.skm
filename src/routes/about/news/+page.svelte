@@ -25,7 +25,7 @@
       flex flex-col gap-8">
     <TextPlaceholder class="mx-auto mb-8 w-full max-w-3xl" />
     {#each Array(5) as _val}
-      <ImagePlaceholder class="odd:-scale-x-100 snap-start" />
+      <ImagePlaceholder class="snap-start odd:-scale-x-100" />
     {/each}
     <TestimonialPlaceholder class="mx-auto mt-8 w-full max-w-xl" />
   </div>

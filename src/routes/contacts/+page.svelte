@@ -61,13 +61,13 @@
     <h1 class="title">Контакты</h1>
   </header>
 
-  <div class="content flex justify-around items-center gap-8">
+  <div class="content flex items-center justify-around gap-8">
     <Contacts
-      class="py-4 h-fit"
+      class="h-fit py-4"
       {microdata} />
 
     <LightboxList
-      class="relative group -sm:hidden md:shrink-0"
+      class="group relative -sm:hidden md:shrink-0"
       custom={{ overlay: 'overflow-offset' }}
       options={{ behaviour: 'loop' }}
       loader={() => document?.lazyload.update()}
@@ -76,15 +76,15 @@
       <svelte:fragment slot="thumbnail">
         <LightboxThumbnail>
           <Sign
-            class="top-2 left-5"
+            class="left-5 top-2"
             icon="ic:round-zoom-out-map"
             dark />
           <img
             class="
-            mx-3
+            hover:drop-shadow-deep
+            transition-easy mx-3
             rounded-md drop-shadow-md
-            hover:drop-shadow-deep hover:scale-105
-            transition-easy"
+            hover:scale-105"
             {...thumbnail}
             alt="" />
         </LightboxThumbnail>
@@ -101,13 +101,13 @@
 
   <div
     class="
-      content flex grow
-      h-[40vmax] xs:h-[35vmax] sm:h-[30vmax] md:h-[25vmax] lg:h-auto">
+      content flex h-[40vmax]
+      grow xs:h-[35vmax] sm:h-[30vmax] md:h-[25vmax] lg:h-auto">
     <YandexMap
       class="
-        w-full min-h-full overflow-hidden
-        bg-gray-200 dark:bg-slate-200 bg-no-repeat bg-center bg-waiting bg-25% sm:bg-20% md:bg-10%
-        border-4 border-slate-400"
+        min-h-full w-full overflow-hidden
+        border-4 border-slate-400 bg-gray-200 bg-waiting bg-25% bg-center bg-no-repeat dark:bg-slate-200
+        sm:bg-20% md:bg-10%"
       data={dataset} />
   </div>
 </main>
