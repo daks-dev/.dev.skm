@@ -1,8 +1,9 @@
+/*
 import dayjs from 'dayjs';
 import format from 'dayjs/plugin/customParseFormat';
 
 dayjs.extend(format);
-
+*/
 import type { PageLoad } from './$types';
 
 type MDData = {
@@ -30,8 +31,11 @@ export const load = (async () => {
       .map(async (path) => {
         const slug = path.split('/').at(-2);
 
-        const date = dayjs(slug, 'YY-MM-DD');
-        const pubDate = `${date.format('DD')}/${date.format('MM')}/${date.format('YYYY')}`;
+        /*const pubDate = dayjs(slug, 'YY-MM-DD').toDate().toLocaleDateString('ru', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });*/
 
         const {
           metadata: { title, description }
@@ -41,7 +45,7 @@ export const load = (async () => {
         for (const image of filter(promises.images, slug))
           images.push((await promises.images[image]()) as ImageMetadata);
 
-        return { slug, pubDate, title, description, images };
+        return { slug, /*pubDate,*/ title, description, images };
       })
   );
   return { items };

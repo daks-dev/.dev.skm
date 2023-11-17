@@ -19,13 +19,14 @@
 <main
   class="grow"
   itemprop="mainContentOfPage">
-  <header class="content mb-0">
+  <header class="mb-0 wrapper-lg">
     <h1 class="title">О предприятии</h1>
   </header>
 
   <div
-    class="content my-auto flex
-              flex-wrap gap-8 py-8 lg:flex-nowrap">
+    class="
+      my-auto flex flex-wrap
+      gap-8 py-8 wrapper-lg lg:flex-nowrap">
     <div class="flex-auto text-lg">
       <h2 class="mb-7">Строительная компания «МАСШТАБ»</h2>
       <p>

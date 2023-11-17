@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
+  import { FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageData } from './$types';
   export let data: PageData;
@@ -17,26 +17,26 @@
   {description} />
 
 <main itemprop="mainContentOfPage snap-start">
-  <header class="content">
+  <header class="wrapper-lg">
     <h1 class="title">Новости</h1>
   </header>
 
   <div
     class="
-      content
-      flex flex-col items-center gap-8">
-    {#each items as { slug, pubDate, title, description, images }, idx}
+      flex
+      flex-wrap justify-around gap-12 wrapper-lg">
+    {#each items as { slug, title, description, images }, idx}
       <article
         class="flex gap-4 -bp:flex-col"
         aria-posinset={idx + 1}
         aria-setsize={items.length}>
         <a
-          class="shadow-md oversee:shadow-lg"
+          class="shadow-md shadow-gray-800 oversee:shadow-lg oversee:shadow-gray-900"
           href="/news/{slug}">
           {#if images.length}
             {@const { src, width, height } = images[0]}
             <img
-              class="aspect-video max-w-xs rounded-md -sm:w-full"
+              class="aspect-video max-w-xs -sm:w-full"
               {src}
               {width}
               {height}
@@ -44,7 +44,10 @@
           {/if}
         </a>
         <div>
-          <time class="text-accent mb-2 block tracking-wide">{pubDate}</time>
+          <FormattedDate
+            class="mb-2 block tracking-wide text-slate-600 dark:text-slate-400"
+            date={slug}
+            parse="YY-MM-DD" />
           <p class="font-semibold">{title}</p>
           <p>{description}</p>
         </div>
@@ -52,11 +55,5 @@
     {:else}
       <p>Новостей нет!</p>
     {/each}
-
-    <!--TextPlaceholder class="mx-auto mb-8 w-full max-w-3xl" />
-    {#each Array(5) as _val}
-      <ImagePlaceholder class="snap-start odd:-scale-x-100" />
-    {/each}
-    <TestimonialPlaceholder class="mx-auto mt-8 w-full max-w-xl" /-->
   </div>
 </main>

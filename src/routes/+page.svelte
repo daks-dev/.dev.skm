@@ -39,8 +39,8 @@
   itemprop="mainContentOfPage">
   <div
     class="
-      wrapper flex flex-wrap
-      items-center pt-8 xl:pt-12">
+      flex flex-wrap items-center
+      pt-8 wrapper-xl xl:pt-12">
     <header class="mb-12 flex w-fit flex-col">
       <Lightbox
         custom={{ overlay: 'overflow-offset' }}
@@ -144,13 +144,13 @@
   </div>
 
   <Infographic
-    class="wrapper"
+    class="wrapper-xl"
     {infographic} />
 
   <div
     class="
-      wrapper
-      text-justify text-xs font-thin text-gray-600 dark:text-gray-400
+      text-justify
+      text-xs font-thin text-gray-600 wrapper-xl dark:text-gray-400
       lg:text-center lg:text-sm">
     Любая информация, представленная на данном сайте, носит исключительно информационный характер и
     ни при каких условиях не является публичной офертой, определяемой положениями

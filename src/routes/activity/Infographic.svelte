@@ -5,9 +5,9 @@
 </script>
 
 <div
-  class="content grid
-        grid-cols-none gap-x-4 gap-y-10 py-8
-        text-center sm:grid-cols-2 lg:grid-cols-3">
+  class="grid grid-cols-none
+        gap-x-4 gap-y-10 py-8 text-center
+        wrapper-lg sm:grid-cols-2 lg:grid-cols-3">
   {#each infographic as info}
     <Lightbox
       class="group relative"
@@ -35,7 +35,7 @@
           </figcaption>
         </figure>
       </svelte:fragment>
-      <div class="content rounded-sm bg-white px-12 py-8 text-black">
+      <div class="rounded-sm bg-white px-12 py-8 text-black wrapper-lg">
         <h3 class="title mb-6">{info.title}</h3>
         {@html info.content}
       </div>

@@ -29,20 +29,18 @@ const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
 
 export const load: PageLoad = async ({ params }) => {
   if (/^\d{2}-\d{2}-\d{2}$/.test(params.slug)) {
-    const md = filter(promises.mds, params.slug)[0];
+    const { slug } = params;
+    const md = filter(promises.mds, slug)[0];
     if (md) {
-      const date = dayjs(params.slug, 'YY-MM-DD');
-      const pubDate = `${date.format('DD')}/${date.format('MM')}/${date.format('YYYY')}`;
-
       const {
         metadata: { title, description },
         default: content
       } = (await promises.mds[md]()) as MDData;
 
       const images: ImageMetadata[] = [];
-      for (const image of filter(promises.images, params.slug))
+      for (const image of filter(promises.images, slug))
         images.push((await promises.images[image]()) as ImageMetadata);
-      return { pubDate, title, description, content, images };
+      return { slug, title, description, content, images };
     }
     throw error(404, 'Not found [data]');
   }
