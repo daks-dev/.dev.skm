@@ -1,7 +1,7 @@
 import { globIndex, globInfoset, globDataset } from '@daks.dev/svelte.sdk';
 
 const idxs = globIndex(
-  import.meta.glob('./*.(heic|heif|avif|jpeg|jpg|png|tiff|webp|gif)', {
+  import.meta.glob('./*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
     import: 'default',
     eager: true
   })
@@ -18,7 +18,7 @@ export const captions = globInfoset(
 export const sources = globDataset(
   idxs,
   captions,
-  import.meta.glob('./*.(heic|heif|avif|jpeg|jpg|png|tiff|webp|gif)', {
+  import.meta.glob('./*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
     query: { meta: true },
     import: 'default',
     eager: true
@@ -28,7 +28,7 @@ export const sources = globDataset(
 export const squares = globDataset(
   idxs,
   captions,
-  import.meta.glob('./*.(heic|heif|avif|jpeg|jpg|png|tiff|webp|gif)', {
+  import.meta.glob('./*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
     query: { w: 320, h: 320, meta: true },
     import: 'default',
     eager: true
@@ -38,7 +38,7 @@ export const squares = globDataset(
 export const screens = globDataset(
   idxs,
   captions,
-  import.meta.glob('./*.(heic|heif|avif|jpeg|jpg|png|tiff|webp|gif)', {
+  import.meta.glob('./*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
     query: { w: 320, h: 180, meta: true },
     import: 'default',
     eager: true

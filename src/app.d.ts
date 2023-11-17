@@ -17,3 +17,13 @@ declare interface Infographic {
   count: number;
   node: HTMLElement;
 }
+
+type ComponentType = import('svelte').ComponentType;
+declare interface MDComponent extends ComponentType {
+  $$prop_def: NonNullable<unknown>;
+}
+declare module '*.(svx|md)' {
+  const Component: MDComponent;
+  export default Component;
+  export const metadata: Record<string, unknown>;
+}

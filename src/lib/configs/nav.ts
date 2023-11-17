@@ -9,10 +9,12 @@ const config: NavSite = {
         links: [
           {
             href: '/feedbacks',
+            base: '',
             label: 'Отзывы'
           },
           {
             href: '/news',
+            base: '',
             label: 'Новости'
           }
         ]
