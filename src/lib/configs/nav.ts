@@ -5,35 +5,35 @@ const config: NavSite = {
     links: [
       {
         href: '/about',
-        label: '<span class="lg:hidden">О компании</span><span class="hidden lg:inline">О!</span>',
+        label: 'О нас',
         links: [
+          {
+            href: '/partners',
+            base: '',
+            label: 'Партнеры'
+          },
           {
             href: '/feedbacks',
             base: '',
             label: 'Отзывы'
-          },
-          {
-            href: '/news',
-            base: '',
-            label: 'Новости'
           }
         ]
+      },
+      {
+        href: '/news',
+        label: 'Новости'
       },
       {
         href: '/activity',
         label: 'Деятельность'
       },
       {
-        href: '/permissions',
-        label: 'Допуски'
-      },
-      {
         href: '/projects',
         label: 'Проекты'
       },
       {
-        href: '/partners',
-        label: 'Партнеры'
+        href: '/permissions',
+        label: 'Допуски'
       },
       {
         href: '/contacts',

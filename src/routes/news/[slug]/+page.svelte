@@ -36,7 +36,7 @@
           alt="" />
       {/if}
     </div>
-    <div class="content">
+    <div class="content grow">
       <svelte:component this={content} />
     </div>
   </div>

@@ -1,10 +1,6 @@
-/*
-import dayjs from 'dayjs';
-import format from 'dayjs/plugin/customParseFormat';
-
-dayjs.extend(format);
-*/
 import type { PageLoad } from './$types';
+
+import placeholder from '$lib/assets/images/skm/logo.png?w=288&aspect=16:9&fit=contain&position=left&meta';
 
 type MDData = {
   metadata: {
@@ -16,7 +12,7 @@ type MDData = {
 const promises = {
   mds: import.meta.glob('$lib/content/news/**/index.md'),
   images: import.meta.glob('$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
-    query: { w: 288, aspect: '16:9', meta: true },
+    query: { w: 288, aspect: '16:9', fit: 'cover', meta: true },
     import: 'default'
   })
 };
@@ -31,12 +27,6 @@ export const load = (async () => {
       .map(async (path) => {
         const slug = path.split('/').at(-2);
 
-        /*const pubDate = dayjs(slug, 'YY-MM-DD').toDate().toLocaleDateString('ru', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });*/
-
         const {
           metadata: { title, description }
         } = (await promises.mds[path]()) as MDData;
@@ -44,8 +34,9 @@ export const load = (async () => {
         const images: ImageMetadata[] = [];
         for (const image of filter(promises.images, slug))
           images.push((await promises.images[image]()) as ImageMetadata);
+        if (!images.length) images[0] = placeholder;
 
-        return { slug, /*pubDate,*/ title, description, images };
+        return { slug, title, description, images };
       })
   );
   return { items };
