@@ -24,17 +24,17 @@
       parse="YY-MM-DD" />
   </header>
 
-  <div class="flex gap-8 wrapper-lg -sm:flex-col -sm:items-center">
-    <div class="shrink-0">
-      {#if images.length}
-        {@const { src, width, height } = images[0]}
+  <div class="flex gap-8 wrapper-lg -sm:flex-col">
+    <div
+      class="mt-2 flex shrink-0 flex-wrap justify-around gap-5 -sm:order-last sm:flex-col sm:justify-start">
+      {#each images as { src, width, height }}
         <img
-          class="mt-2 rounded-md -xs:w-full"
+          class="rounded-md border border-slate-500 -lg:w-48"
           {src}
           {width}
           {height}
           alt="" />
-      {/if}
+      {/each}
     </div>
     <div class="content grow">
       <svelte:component this={content} />

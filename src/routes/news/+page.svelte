@@ -33,7 +33,9 @@
           link
           dark />
         <Figure
-          custom={{ image: 'mb-2 aspect-video w-48 bg-transparent lg:w-auto' }}
+          custom={{
+            image: 'mb-2 aspect-video w-48 bg-neutral-500/10 group-hover:sepia lg:w-auto'
+          }}
           data={{
             ...images[0],
             title,
