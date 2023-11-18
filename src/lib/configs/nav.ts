@@ -20,10 +20,6 @@ const config: NavSite = {
         ]
       },
       {
-        href: '/news',
-        label: 'Новости'
-      },
-      {
         href: '/activity',
         label: 'Деятельность'
       },
@@ -34,6 +30,10 @@ const config: NavSite = {
       {
         href: '/permissions',
         label: 'Допуски'
+      },
+      {
+        href: '/news',
+        label: 'Новости'
       },
       {
         href: '/contacts',

@@ -1,10 +1,7 @@
-import dayjs from 'dayjs';
-import format from 'dayjs/plugin/customParseFormat';
-
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-dayjs.extend(format);
+import placeholder from '$lib/assets/images/skm/logo.png?w=288&meta';
 
 // export const prerender = 'auto';
 
@@ -40,6 +37,8 @@ export const load: PageLoad = async ({ params }) => {
       const images: ImageMetadata[] = [];
       for (const image of filter(promises.images, slug))
         images.push((await promises.images[image]()) as ImageMetadata);
+      if (!images.length) images[0] = placeholder;
+
       return { slug, title, description, content, images };
     }
     throw error(404, 'Not found [data]');
