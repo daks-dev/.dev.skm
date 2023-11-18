@@ -68,7 +68,7 @@
 
     <LightboxList
       class="group relative -sm:hidden md:shrink-0"
-      custom={{ overlay: 'overflow-offset' }}
+      custom={{ overlay: 'overflow-y-offset' }}
       options={{ behaviour: 'loop' }}
       loader={() => document?.lazyload.update()}
       title="Масштаб &trade;"
@@ -81,10 +81,11 @@
             dark />
           <img
             class="
-            hover:drop-shadow-deep
-            transition-easy mx-3
-            rounded-md drop-shadow-md
-            hover:scale-105"
+              hover:drop-shadow-deep
+              transition-easy mx-3
+              rounded-md drop-shadow-md
+              transition-transform
+              duration-300 oversee:scale-105"
             {...thumbnail}
             alt="" />
         </LightboxThumbnail>

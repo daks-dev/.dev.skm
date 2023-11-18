@@ -29,7 +29,7 @@
       class="mt-2 flex shrink-0 flex-wrap justify-around gap-5 -sm:order-last sm:flex-col sm:justify-start">
       {#each images as { src, width, height }}
         <img
-          class="rounded-md border border-slate-500 -lg:w-48"
+          class="rounded-md -lg:w-48"
           {src}
           {width}
           {height}
