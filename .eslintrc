@@ -82,13 +82,7 @@
         "whitelist": ["lazy"]
       }
     ],
-    "tailwindcss/classnames-order": [
-      "warn",
-      {
-        "callees": ["twMerge", "twJoin", "classnames", "clsx", "ctl"],
-        "config": "./tailwind.config.ts"
-      }
-    ]
+    "tailwindcss/classnames-order": "warn"
   },
   "ignorePatterns": [
     "**/.svelte-kit/",

@@ -21,10 +21,10 @@
         <figure class="flex flex-col items-center gap-2">
           <img
             class="
-              drop-shadow-deep hover:drop-shadow-hard
               rounded-lg bg-slate-600
-              p-5 transition duration-300
-              ease-in-out hover:scale-105 dark:bg-transparent"
+              p-5 drop-shadow-lg
+              transition duration-300 ease-in-out
+              hover:scale-105 hover:drop-shadow-xl dark:bg-transparent"
             src={info.icon?.src}
             width={info.icon?.width}
             height={info.icon?.height}
@@ -35,9 +35,11 @@
           </figcaption>
         </figure>
       </svelte:fragment>
-      <div class="rounded-sm bg-white px-12 py-8 text-black wrapper-lg">
-        <h3 class="title mb-6">{info.title}</h3>
-        {@html info.content}
+      <div class="max-w-5xl rounded-sm bg-white text-black">
+        <div class="content px-10 py-5 leading-normal">
+          <h3 class="title mb-5">{info.title}</h3>
+          {@html info.content}
+        </div>
       </div>
     </Lightbox>
   {/each}
