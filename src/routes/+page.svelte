@@ -49,7 +49,7 @@
         <svelte:fragment slot="thumbnail">
           <img
             class="
-              mx-auto
+              mx-auto w-52
               pb-4 drop-shadow-2xl hover:sepia
               sm:mx-0 sm:inline-block"
             src={logo.thumbnail.src}
@@ -110,14 +110,16 @@
         flex w-full flex-row items-center justify-around xs:hidden">
       <a
         class={button}
-        href="tel://{telephone.replace(/[\s-()]/g, '')}">
+        href="tel://{telephone.replace(/[\s-()]/g, '')}"
+        aria-label="telephone">
         <Icon
           icon="ic:round-phone-in-talk"
           class="h-16 w-16" />
       </a>
       <a
         class={button}
-        href="mailto:{email}">
+        href="mailto:{email}"
+        aria-label="email">
         <Icon
           icon="ic:round-mail-outline"
           class="h-16 w-16" />

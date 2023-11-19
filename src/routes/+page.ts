@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 export const load = (async () => ({
   logo: {
     image: (await import('$lib/assets/images/skm/logo.png?meta')).default,
-    thumbnail: (await import('$lib/assets/images/skm/logo.png?w=210&meta')).default
+    thumbnail: (await import('$lib/assets/images/skm/logo.png?w=312&meta')).default
   },
   infographic: [
     {

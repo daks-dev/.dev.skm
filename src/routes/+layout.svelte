@@ -3,12 +3,13 @@
   import {
     lazyload,
     Head,
-    Footer,
+    // Footer,
     NavbarKit,
     RouteTransition,
     ScreenBlock,
     YandexMetrikaInit
   } from '@daks.dev/svelte.sdk';
+  import Footer from '$lib/components/footer/Footer.svelte';
 
   import '../app.css';
   import '$iconify';
