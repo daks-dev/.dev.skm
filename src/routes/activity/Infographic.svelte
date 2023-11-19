@@ -36,7 +36,7 @@
         </figure>
       </svelte:fragment>
       <div class="max-w-5xl rounded-sm bg-white text-black">
-        <div class="content px-10 pb-7 pt-5 text-justify leading-normal">
+        <div class="content px-10 pb-7 pt-5 text-justify leading-relaxed">
           <h3 class="title mb-5">{info.title}</h3>
           {@html info.content}
         </div>

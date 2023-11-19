@@ -2,6 +2,8 @@
   import { onMount } from 'svelte';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
+  import '@daks.dev/svelte.sdk/styles/content.css';
+
   import type { PageData } from './$types';
   export let data: PageData;
   const { image } = data;
@@ -27,8 +29,8 @@
     class="
       my-auto flex flex-wrap
       gap-8 py-8 wrapper-lg lg:flex-nowrap">
-    <div class="flex-auto text-lg">
-      <h2 class="mb-7">Строительная компания «МАСШТАБ»</h2>
+    <div class="content flex-auto leading-relaxed bp:text-lg/relaxed">
+      <h2>Строительная компания «МАСШТАБ»</h2>
       <p>
         Строительная компания «Масштаб» является достаточно молодой и перспективной организацией,
         занимающейся контролем за соблюдением технологических процессов строительного производства,
@@ -46,8 +48,8 @@
 
     <img
       class="
-        bg-1/5 mx-auto
-        flex-initial bg-loading bg-center bg-no-repeat"
+        mx-auto mt-3 flex-initial
+        bg-neutral-300 bg-loading bg-20% bg-center bg-no-repeat"
       src={image.thumbnail.src}
       width={image.thumbnail.width}
       height={image.thumbnail.height}
