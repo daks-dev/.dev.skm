@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 
 export const load = (async () => ({
   logo: {
@@ -27,4 +27,4 @@ export const load = (async () => ({
       max: 52
     }
   ]
-})) satisfies PageServerLoad;
+})) satisfies PageLoad;

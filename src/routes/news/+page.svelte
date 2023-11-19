@@ -36,7 +36,7 @@
           custom={{
             image: [
               'mb-2 aspect-video w-48 lg:w-auto',
-              'rounded-md bg-neutral-500/10 group-hover:scale-105',
+              'rounded-md bg-neutral-500/10 group-oversee:scale-105',
               'transition-transform duration-300'
             ]
           }}

@@ -1,6 +1,6 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import { sources } from '$lib/content/partners';
 
 export const load = (() => ({
   dataset: sources
-})) satisfies PageServerLoad;
+})) satisfies PageLoad;

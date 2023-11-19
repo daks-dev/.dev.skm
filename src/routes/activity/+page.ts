@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 
 export const load = (async () => ({
   infographic: [
@@ -68,4 +68,4 @@ export const load = (async () => ({
       `
     }
   ]
-})) satisfies PageServerLoad;
+})) satisfies PageLoad;
