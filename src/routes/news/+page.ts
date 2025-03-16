@@ -1,6 +1,6 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 
-import placeholder from '$lib/assets/images/skm/logo.png?w=288&aspect=16:9&fit=contain&meta';
+import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
 
 type MDData = {
   metadata: {
@@ -20,12 +20,13 @@ const promises = {
 const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
   Object.keys(obj).filter((x) => x.split('/').at(-2) === dir);
 
-export const load = (async () => {
+export const load: PageLoad = async () => {
   const items = await Promise.all(
     Object.keys(promises.mds)
       .sort((x, y) => (x > y ? -1 : 1))
       .map(async (path) => {
         const slug = path.split('/').at(-2);
+
         const {
           metadata: { title, description }
         } = (await promises.mds[path]()) as MDData;
@@ -39,4 +40,4 @@ export const load = (async () => {
       })
   );
   return { items };
-}) satisfies PageServerLoad;
+};

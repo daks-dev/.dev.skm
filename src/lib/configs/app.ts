@@ -7,7 +7,8 @@ const config = {
   description:
     'Строительная и техническая экспертиза, обследование зданий и сооружений в Москве. Строительная компания «Масштаб»',
 
-  display: 'minimal-ui', // standalone
+  displayOverride: ['fullscreen', 'minimal-ui'],
+  display: 'standalone',
   backgroundColor: '#fafafa',
   themeColor: '#cbd5e1',
   tileColor: '#1e293b'

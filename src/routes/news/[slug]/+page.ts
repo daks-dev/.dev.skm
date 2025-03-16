@@ -1,10 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-import placeholder from '$lib/assets/images/skm/logo.png?w=288&meta';
-
-// export const prerender = 'auto';
-// export const ssr = false;
+import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
 
 type MDData = {
   metadata: {
@@ -25,7 +22,7 @@ const promises = {
 const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
   Object.keys(obj).filter((x) => x.split('/').at(-2) === dir);
 
-export const load = (async ({ params }) => {
+export const load: PageLoad = async ({ params }) => {
   if (/^\d{2}-\d{2}-\d{2}$/.test(params.slug)) {
     const { slug } = params;
     const md = filter(promises.mds, slug)[0];
@@ -51,4 +48,4 @@ export const load = (async ({ params }) => {
     throw error(404, 'Not found [data]');
   }
   throw error(404, 'Not found');
-}) satisfies PageLoad;
+};

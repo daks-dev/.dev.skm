@@ -37,10 +37,7 @@
 <main
   class="grow justify-between"
   itemprop="mainContentOfPage">
-  <div
-    class="
-      frame-xl flex flex-wrap
-      items-center pt-8 xl:pt-12">
+  <div class={['frame-xl pt-8 xl:pt-12', 'flex flex-wrap items-center']}>
     <header class="mb-12 flex w-fit flex-col">
       <Lightbox
         custom={{ overlay: 'overflow-offset' }}
