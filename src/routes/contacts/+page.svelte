@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import {
     Contacts,
+    Figure,
     LightboxList,
     LightboxThumbnail,
     LightboxModal,
@@ -61,7 +62,7 @@
     <h1 class="title">Контакты</h1>
   </header>
 
-  <div class="frame flex items-center justify-around gap-8">
+  <div class="frame flex items-center justify-between gap-8">
     <Contacts
       class="h-fit py-4"
       {microdata} />
@@ -79,22 +80,36 @@
             class="top-2 left-5"
             icon="ic:round-zoom-out-map"
             dark />
-          <img
-            class="
-              transition-easy
-              oversee:scale-105 mx-3
-              rounded-md drop-shadow-md
-              transition-transform
-              duration-300 hover:drop-shadow-lg"
-            {...thumbnail}
-            alt="" />
+          <Figure
+            data={thumbnail}
+            class={['relative', 'flex flex-col', 'items-center']}
+            custom={{
+              image: [
+                'h-auto w-full max-w-full object-contain',
+                'rounded-md',
+                'shadow-md hover:shadow-lg',
+                'hover:scale-105',
+                'transition duration-300 ease-in-out'
+              ]
+            }}
+            alt="контактная информация" />
+          {#each sources as source}
+            <link
+              rel="image"
+              href={source.src} />
+          {/each}
+          <link
+            rel="thumbnailUrl"
+            href={thumbnail.src} />
         </LightboxThumbnail>
       </svelte:fragment>
       {#each sources as source}
         <LightboxModal>
           <img
             {...source}
-            alt="" />
+            alt=""
+            decoding="async"
+            loading="lazy" />
         </LightboxModal>
       {/each}
     </LightboxList>

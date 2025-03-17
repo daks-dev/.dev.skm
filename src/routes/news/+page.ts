@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 
-import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
+import placeholder from '$lib/assets/images/skm/logo.png?w=288&aspect=16:9&fit=contain&meta';
 
 type MDData = {
   metadata: {

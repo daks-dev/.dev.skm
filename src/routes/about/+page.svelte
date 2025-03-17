@@ -2,8 +2,6 @@
   import { onMount } from 'svelte';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  import '@daks.dev/svelte.sdk/styles/content.css';
-
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   const { image } = data;
