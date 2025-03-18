@@ -81,9 +81,7 @@
           </h1>
         </svelte:fragment>
         <img
-          class="
-            bg-10% bg--loading bg-center bg-no-repeat
-            hover:sepia"
+          class={['bg-10% bg--loading bg-center bg-no-repeat', 'hover:sepia']}
           src={logo.image.src}
           width={logo.image.width}
           height={logo.image.height}
@@ -92,20 +90,18 @@
       </Lightbox>
       <!-- text-cyan-600 dark:text-cyan-700 -->
       <h2
-        class="
-          xs:text-4xl lg:text-4.5xl pt-4
-          text-center text-3xl
-          font-normal
-          text-cyan-700 md:text-5xl lg:text-left xl:pt-8 xl:text-5xl 2xl:pt-12
-          2xl:text-6xl dark:text-cyan-600">
+        class={[
+          'pt-4 xl:pt-8 2xl:pt-12',
+          'font-normal',
+          'text-center lg:text-left',
+          'xs:text-4xl lg:text-4.5xl text-3xl md:text-5xl xl:text-5xl 2xl:text-6xl',
+          'text-cyan-700 dark:text-cyan-600'
+        ]}>
         Строим будущее <span class="whitespace-nowrap">по-новому</span>
       </h2>
     </header>
 
-    <div
-      class="
-        xs:hidden
-        mb-12 flex w-full flex-row items-center justify-around">
+    <div class={['xs:hidden', 'mb-12 w-full', 'flex flex-row items-center justify-around']}>
       <a
         class={classButton}
         href="tel://{telephone.replace(/[\s-()]/g, '')}"
@@ -123,12 +119,7 @@
           class="h-16 w-16" />
       </a>
     </div>
-    <div
-      class={[
-        'xs:block hidden',
-        'mx-auto mb-12 w-full max-w-xs px-2',
-        'lg:-mt-12 lg:mr-0 lg:mb-0 xl:max-w-sm'
-      ]}>
+    <div class={['hidden sm:block', 'mx-auto mb-8 w-full max-w-sm', 'max-xl:pl-4 lg:mb-auto']}>
       <Async
         let:value
         {getter}>
@@ -136,24 +127,25 @@
           class="overflow-hidden rounded-md drop-shadow-lg lg:rounded-lg"
           {...value}
           {show}
-          duration={15000}
+          duration={20000}
           controls=""
           stream
           invert />
       </Async>
-      <!--SvelteKit /-->
     </div>
   </div>
 
   <Infographic
-    class="frame-xl"
+    class="frame-xl mb-4"
     {infographic} />
 
   <div
-    class="
-      frame-xl
-      text-justify text-xs font-thin text-gray-600 lg:text-center
-      lg:text-sm dark:text-gray-400">
+    class={[
+      'frame',
+      'text-justify text-xs font-thin',
+      'lg:text-center lg:text-sm',
+      'text-gray-600 dark:text-gray-400'
+    ]}>
     Любая информация, представленная на данном сайте, носит исключительно информационный характер и
     ни при каких условиях не является публичной офертой, определяемой положениями
     статьи&nbsp;437&nbsp;ГК&nbsp;РФ.

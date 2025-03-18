@@ -7,6 +7,7 @@ DEV && (await iconkit());
 const redirects: Record<string, string> = {
   // '': ''
 };
+
 export const handle: Handle = async ({ event, resolve }) => {
   if (event.url.pathname in redirects) {
     return new Response(undefined, {
