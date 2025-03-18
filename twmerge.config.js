@@ -1,9 +1,9 @@
 const config = {
   extend: {
-    theme: {},
-    classGroups: {},
-    conflictingClassGroups: {},
-    orderSensitiveModifiers: []
+    // theme: {},
+    // classGroups: {},
+    // conflictingClassGroups: {},
+    // orderSensitiveModifiers: []
   }
 };
 

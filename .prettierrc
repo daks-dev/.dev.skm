@@ -13,7 +13,7 @@
   "bracketSameLine": true,
   "vueIndentScriptAndStyle": false,
   "embeddedLanguageFormatting": "auto",
-  "tailwindAttributes": ["class", "className", "custom", "ngClass"],
+  "tailwindAttributes": ["class", "class*", "custom", "ngClass"],
   "tailwindFunctions": ["twMerge", "twJoin", "classnames", "clsx", "ctl"],
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
   "overrides": [

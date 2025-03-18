@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
+  import { twMerge } from '@daks.dev/svelte.sdk';
 
   export let infographic: Partial<Infographic>[];
 
@@ -38,9 +38,7 @@
     <figure class="flex flex-col items-center gap-4">
       <img
         bind:this={info.node}
-        class="
-          rounded-lg bg-slate-600
-          p-7 dark:bg-transparent"
+        class={['p-7', 'bg-slate-600 dark:bg-transparent', 'rounded-lg']}
         style:opacity=".25"
         src={info.icon?.src}
         width={info.icon?.width}
@@ -49,16 +47,10 @@
         decoding="sync"
         loading="eager" />
       <figcaption class="flex flex-col items-center gap-2">
-        <span
-          class="
-            text-4xl font-bold
-            text-gray-500 dark:text-slate-300">
+        <span class={['text-4xl font-bold', 'text-gray-500 dark:text-slate-300']}>
           {@html info.count || '&mdash;'}
         </span>
-        <span
-          class="
-            text-lg text-slate-600
-            md:text-xl dark:text-slate-300">
+        <span class="text-lg text-slate-600 md:text-xl dark:text-slate-300">
           {info.title}
         </span>
       </figcaption>

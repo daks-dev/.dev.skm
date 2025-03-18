@@ -18,7 +18,7 @@
 
   import { app, nav } from '$lib/configs';
 
-  BROWSER && (document.lazyload ??= lazyload());
+  if (BROWSER) document.lazyload ??= lazyload();
 </script>
 
 <Head {app} />

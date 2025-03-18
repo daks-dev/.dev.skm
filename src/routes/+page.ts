@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 
-export const load = (async () => ({
+export const load: PageLoad = async () => ({
   logo: {
     image: (await import('$lib/assets/images/skm/logo.png?meta')).default,
     thumbnail: (await import('$lib/assets/images/skm/logo.png?w=312&meta')).default
@@ -27,4 +27,4 @@ export const load = (async () => ({
       max: 52
     }
   ]
-})) satisfies PageLoad;
+});

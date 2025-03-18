@@ -15,13 +15,15 @@
   let { data }: PageProps = $props();
   const { logo, infographic } = data;
 
-  const show = (x: number) => (x < 480 && 1) || (x < 1024 && 2) || 1;
-  const button = `
-    py-4 px-5 rounded-lg
-    text-cyan-600 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200
-    dark:text-slate-400 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700
-    shadow-md shadow-slate-500/20
-  `;
+  const show = 1; // (x: number) => (x < 480 && 1) || (x < 1024 && 2) || 3;
+  const classButton = [
+    'py-4 px-5',
+    'text-cyan-600 bg-white hover:bg-gray-100 focus:ring-gray-200',
+    'dark:text-slate-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
+    'border border-gray-300 rounded-lg',
+    'dark:border-gray-600 dark:hover:border-gray-600',
+    'shadow-md shadow-slate-500/20'
+  ];
 
   const title = 'СКМ • Строительная Компания «Масштаб»';
   const description =
@@ -45,10 +47,7 @@
         description="Строительная компания">
         <svelte:fragment slot="thumbnail">
           <img
-            class="
-              mx-auto w-52
-              pb-4 drop-shadow-2xl hover:sepia
-              sm:mx-0 sm:inline-block"
+            class={['mx-auto w-52 pb-4', 'sm:mx-0 sm:inline-block', 'drop-shadow-2xl hover:sepia']}
             src={logo.thumbnail.src}
             width={logo.thumbnail.width}
             height={logo.thumbnail.height}
@@ -60,17 +59,19 @@
             rel="image"
             itemprop="primaryImageOfPage" />
           <h1
-            class="
-              text-shadow
-              text-center
-              font-semibold text-gray-600 sm:inline-block sm:text-left dark:text-gray-300"
-            style:--text-shadow-color="#555555"
-            style:--text-shadow-val="7px">
+            class={[
+              'sm:inline-block',
+              'text-center font-semibold sm:text-left',
+              'text-gray-600 dark:text-gray-300',
+              'text-shadow-4',
+              'shadow-gray-400 dark:shadow-gray-600'
+            ]}>
             <span
-              class="
-                text-3.5xl
-                lg:text-4.5xl
-                block font-extrabold uppercase md:text-4xl xl:text-5xl">
+              class={[
+                'block',
+                'font-extrabold uppercase',
+                'text-3.5xl lg:text-4.5xl md:text-4xl xl:text-5xl'
+              ]}>
               Масштаб &trade;
             </span>
             <span
@@ -106,7 +107,7 @@
         xs:hidden
         mb-12 flex w-full flex-row items-center justify-around">
       <a
-        class={button}
+        class={classButton}
         href="tel://{telephone.replace(/[\s-()]/g, '')}"
         aria-label="telephone">
         <Icon
@@ -114,7 +115,7 @@
           class="h-16 w-16" />
       </a>
       <a
-        class={button}
+        class={classButton}
         href="mailto:{email}"
         aria-label="email">
         <Icon
@@ -123,9 +124,11 @@
       </a>
     </div>
     <div
-      class="
-        xs:block mx-auto
-        mb-12 hidden w-full px-2 lg:-mt-12 lg:mr-0 lg:mb-0 lg:max-w-xs xl:max-w-sm">
+      class={[
+        'xs:block hidden',
+        'mx-auto mb-12 w-full max-w-xs px-2',
+        'lg:-mt-12 lg:mr-0 lg:mb-0 xl:max-w-sm'
+      ]}>
       <Async
         let:value
         {getter}>
@@ -143,7 +146,7 @@
   </div>
 
   <Infographic
-    class="wrapper-xl"
+    class="frame-xl"
     {infographic} />
 
   <div
