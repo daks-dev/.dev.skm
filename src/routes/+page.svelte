@@ -45,7 +45,7 @@
         custom={{ overlay: 'overflow-offset' }}
         title="Масштаб &trade;"
         description="Строительная компания">
-        <svelte:fragment slot="thumbnail">
+        {#snippet thumbnail()}
           <img
             class={['mx-auto w-52 pb-4', 'sm:mx-0 sm:inline-block', 'drop-shadow-2xl hover:sepia']}
             src={logo.thumbnail.src}
@@ -79,7 +79,7 @@
               Строительная&nbsp;компания
             </span>
           </h1>
-        </svelte:fragment>
+        {/snippet}
         <img
           class={['bg-10% bg--loading bg-center bg-no-repeat', 'hover:sepia']}
           src={logo.image.src}

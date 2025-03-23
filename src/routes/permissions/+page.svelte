@@ -3,7 +3,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { sources, thumbnails } = data;
+  const { sources, modifieds } = data;
 
   const title = 'СКМ • Допуски';
   const description = 'Допуски предпрятия СКМ';
@@ -23,8 +23,8 @@
     custom={{ overlay: 'overflow-offset' }}
     options={{ behaviour: 'loop' }}
     {sources}
-    {thumbnails}
-    sign
+    {modifieds}
+    sign="ic:round-zoom-out-map"
     centered
     shadow
     scale />

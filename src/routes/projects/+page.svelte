@@ -1,7 +1,9 @@
 <script lang="ts">
   import { YandexMetrikaHit, LightboxKit } from '@daks.dev/svelte.sdk';
 
-  import { sources, squares as thumbnails } from '$lib/assets/images/gallery';
+  import type { PageProps } from './$types';
+  let { data }: PageProps = $props();
+  const { sources, modifieds } = data;
 
   const title = 'СКМ • Проекты';
   const description = 'Проекты предпрятия СКМ';
@@ -21,8 +23,8 @@
     custom={{ overlay: 'overflow-offset' }}
     options={{ behaviour: 'loop' }}
     {sources}
-    {thumbnails}
-    sign
+    {modifieds}
+    sign="ic:round-zoom-out-map"
     centered
     rounded
     shadow

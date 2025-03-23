@@ -13,7 +13,7 @@
       class="group relative"
       custom={{ overlay: 'overflow-offset' }}
       scrollable={true}>
-      <svelte:fragment slot="thumbnail">
+      {#snippet thumbnail()}
         <Sign
           class="top-2 left-1/2 -ml-[72px]"
           icon="ic:round-zoom-out-map"
@@ -34,7 +34,7 @@
             {info.title}
           </figcaption>
         </figure>
-      </svelte:fragment>
+      {/snippet}
       <div class="max-w-5xl rounded-sm bg-white text-black">
         <div class="frame px-10 pt-5 pb-7 text-justify leading-relaxed">
           <h3 class="title mb-5">{info.title}</h3>
