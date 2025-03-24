@@ -5,21 +5,23 @@
 </script>
 
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { sineIn, sineOut } from 'svelte/easing';
+  import { blur, fade } from 'svelte/transition';
   import { Figure, FormattedDate, ListMode, Sign, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import placeholder from '$lib/assets/images/skm/logo.png?w=288&aspect=16:9&fit=contain&meta';
-
-  // const random = (x?: unknown[]): number => (x?.length ? Math.floor(Math.random() * x.length) : -1);
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   const { items } = data;
 
+  const transition = {
+    in: { duration: 150, delay: 50, easing: sineIn },
+    out: { duration: 75, easing: sineOut }
+  };
+
   const title = 'СКМ • Новости';
   const description = 'Новости предприятия СКМ';
-
-  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -34,13 +36,15 @@
   {#if items.length}
     <ListMode
       bind:mode
-      class="frame -mt-13 mb-4"
       length={items.length}
+      class="frame -mt-9 mb-4"
       app
       list />
 
     {#if mode === 'app'}
       <div
+        in:blur={transition.in}
+        out:fade={transition.out}
         class={[
           'frame',
           'xs:grid-cols-2 grid grid-cols-1 md:grid-cols-3',
@@ -93,7 +97,10 @@
         {/each}
       </div>
     {:else}
-      <div class={['frame', 'flex flex-col']}>
+      <div
+        in:blur={transition.in}
+        out:fade={transition.out}
+        class={['frame', 'flex flex-col']}>
         {#each items as { slug, title, description }, idx}
           <a
             class={[
