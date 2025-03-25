@@ -5,9 +5,12 @@
 </script>
 
 <div
-  class="frame grid
-        grid-cols-none gap-x-4 gap-y-10 py-8
-        text-center sm:grid-cols-2 lg:grid-cols-3">
+  class={[
+    'frame py-8',
+    'grid grid-cols-none gap-x-4 gap-y-10',
+    'sm:grid-cols-2 lg:grid-cols-3',
+    'text-center'
+  ]}>
   {#each infographic as info}
     <Lightbox
       class="group relative"
@@ -20,11 +23,12 @@
           small />
         <figure class="flex flex-col items-center gap-2">
           <img
-            class="
-              rounded-lg bg-slate-600
-              p-5 drop-shadow-lg
-              transition duration-300 ease-in-out
-              hover:scale-105 hover:drop-shadow-xl dark:bg-transparent"
+            class={[
+              'p-5',
+              'rounded-lg bg-slate-600 drop-shadow-lg dark:bg-transparent',
+              'hover:scale-105 hover:drop-shadow-xl',
+              'transition duration-200 ease-in-out'
+            ]}
             src={info.icon?.src}
             width={info.icon?.width}
             height={info.icon?.height}
@@ -35,9 +39,10 @@
           </figcaption>
         </figure>
       {/snippet}
-      <div class="max-w-5xl rounded-sm bg-white text-black">
-        <div class="frame px-10 pt-5 pb-7 text-justify leading-relaxed">
-          <h3 class="title mb-5">{info.title}</h3>
+      <div
+        class={['readable', 'frame px-12 pt-5 pb-7', 'bg-neutral-50 text-gray-800', 'rounded-xs']}>
+        <h3 class="title mb-5 font-medium">{info.title}</h3>
+        <div class="sm:text-justify">
           {@html info.content}
         </div>
       </div>
