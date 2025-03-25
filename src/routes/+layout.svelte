@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BROWSER } from 'esm-env';
+  import { browser } from '$app/environment';
   import {
     lazyload,
     Head,
@@ -18,7 +18,7 @@
 
   import { app, nav } from '$lib/configs';
 
-  if (BROWSER) document.lazyload ??= lazyload();
+  browser && (document.lazyload ??= lazyload());
 </script>
 
 <Head {app} />
@@ -26,6 +26,8 @@
 <RouteTransition
   refresh={data.refresh}
   class="flex grow flex-col"
+  duration={275}
+  delay={125}
   mode={1}>
   {@render children?.()}
 </RouteTransition>

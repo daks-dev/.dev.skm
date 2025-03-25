@@ -1,7 +1,10 @@
 {
   // "typescript.inlayHints.parameterNames.enabled": "all",
   "[svelte]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[svx]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "prettier.prettierPath": "../../node_modules/prettier"
   // "prettier.configPath": "../../.prettierrc",
